@@ -17,7 +17,7 @@ export default function OrderSummary() {
                     Order summary
                 </Typography>
                 <Typography variant="body2" sx={{fontStyle: 'italic'}}>
-                    Orders over $100 qualify for free delivery!
+                    Orders over € 100 qualify for free delivery!
                 </Typography>
                 <Box mt={2}>
                     <Box display="flex" justifyContent="space-between" mb={1}>
