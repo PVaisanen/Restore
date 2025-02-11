@@ -42,7 +42,8 @@ namespace API.Controllers
         [HttpDelete]
         public async Task<ActionResult> RemoveBasketItem(int productId, int quantity)
         {
-            var basket = await RetrieveBasket();
+              var basket = await RetrieveBasket();
+          //  var basket = await contex.Baskets.GetBasketwithItems(Request.Cookies["basketId"]);
 
             if (basket == null) return BadRequest("Unable to retrieve basket");
 
@@ -68,6 +69,8 @@ namespace API.Controllers
             context.Baskets.Add(basket);
             return basket;
         }
+      
+        
         private async Task<Basket?> RetrieveBasket()
         {
             return await context.Baskets
@@ -75,6 +78,6 @@ namespace API.Controllers
                 .ThenInclude( x => x.Product)
                 .FirstOrDefaultAsync(x => x.BasketId == Request.Cookies["basketId"]);
         }
-
+        
     }
 }
