@@ -1,4 +1,4 @@
-import { Alert, AlertTitle, Button, ButtonGroup, Container, List, ListItem, Typography } from "@mui/material";
+import { Alert, AlertTitle, Button, ButtonGroup, Container, Divider, List, ListItem, Typography } from "@mui/material";
 import { useLazyGet400ErrorQuery, useLazyGet401ErrorQuery, useLazyGet404ErrorQuery, useLazyGet500ErrorQuery, useLazyGetValidationErrorQuery } from "./errorApi";
 import { useState } from "react";
 
@@ -24,7 +24,18 @@ export default function AboutPage() {
 
   return (
     <Container>
-      <Typography gutterBottom variant="h3">Error for testing</Typography>
+
+      <Typography variant="h3" sx={{mb: 1}} textAlign='center'>
+        Modern webshop   
+      </Typography>
+      <Typography variant="h6" sx={{mb: 3}} textAlign='center'>
+        We promise to delivery your order fast and reliably. 
+      </Typography>
+
+      <Divider />
+
+
+      <Typography gutterBottom variant="h5" sx={{mt: 5}}>Error for testing</Typography>
       <ButtonGroup>
         <Button variant="contained" onClick={() => trigger400Error()
             .catch(err => console.log(err))}>

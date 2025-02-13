@@ -1,7 +1,7 @@
 import { Box, Divider, Table, TableBody, TableCell, TableContainer, TableRow, Typography } from "@mui/material";
 import { ConfirmationToken } from "@stripe/stripe-js";
 import { useBasket } from "../../lib/hooks/useBasket";
-import { currencyFormat } from "../../lib/util";
+import {  currencyFormat } from "../../lib/util";
 
 type Props = {
     confirmationToken: ConfirmationToken | null;
@@ -14,7 +14,7 @@ export default function Review({confirmationToken}: Props) {
         const {name, address} = confirmationToken.shipping;
         return `${name}, ${address?.line1}, ${address?.line2}, ${address?.city}, ${address?.state},
                 ${address?.postal_code}, ${address?.country} `
-    }
+    }  
 
     const paymentString = () => {
         if (!confirmationToken?.payment_method_preview.card) return '';
@@ -22,7 +22,7 @@ export default function Review({confirmationToken}: Props) {
 
         return `${card.brand.toLocaleUpperCase()}, **** **** **** ${card.last4}, 
             Exp ${card.exp_month}/${card.exp_year}`
-    }
+    } 
 
     const ConfirmationEmailString = () => {
         if(!confirmationToken?.payment_method_preview.billing_details.email && 

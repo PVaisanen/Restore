@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux"
 import { decrement, increment } from "./counterReducer";
-import { Button, ButtonGroup, Typography } from "@mui/material";
+import { Button, ButtonGroup, Divider, Typography } from "@mui/material";
 import { useAppSelector } from "../../app/store/store";
 
 export default function ContactPage() {
@@ -11,7 +11,29 @@ export default function ContactPage() {
       <Typography variant="h2">
         Contact page
       </Typography>
-      <Typography variant="body1">
+      <Typography variant="body1" sx={{mb: 1, mt:3}}>
+        Billing
+      </Typography>
+      <Typography variant="body2" sx={{mb: 3, ml:3}}>
+        billing@estore.fi
+      </Typography>
+
+      <Typography variant="body1" sx={{mb: 1, mt:3}}>
+        Support and other topics
+      </Typography>
+      <Typography variant="body2" sx={{mb: 3, ml:3}}>
+        info@estore.fi 
+      </Typography>
+      
+      <Typography variant="body1" sx={{mb: 1, mt:3}}>
+        Address
+      </Typography>
+      <Typography variant="body2" sx={{mb: 3, ml:3}}>
+        E-Street 25, Helsinki Finland
+      </Typography>
+
+      <Divider />
+      <Typography variant="body1" sx={{mt: 5}}>
         The data is: {data}
       </Typography>
       <ButtonGroup>
