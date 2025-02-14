@@ -3,6 +3,7 @@ import { Button, Divider, Grid2, Table, TableBody, TableCell, TableContainer, Ta
 import { useFetchProductdetailsQuery } from "./catalogApi";
 import { useAddBasketItemMutation, useFetchBasketQuery, useRemoveBasketItemMutation } from "../basket/basketApi";
 import { ChangeEvent, useEffect, useState } from "react";
+import { currencyFormat } from "../../lib/util";
 
 export default function ProductDetails() {
   const {id} = useParams();
@@ -52,7 +53,7 @@ export default function ProductDetails() {
       <Grid2 size={6}>
         <Typography variant="h3">{product.name}</Typography>
         <Divider sx={{mb: 2}} />
-        <Typography variant="h4" color='secondary'>${(product.price / 100).toFixed(2)}</Typography>
+        <Typography variant="h4" color='secondary'>{currencyFormat(product.price)}</Typography>
         <TableContainer>
           <Table sx={{
             '& td': {fontSize: '1rem'}

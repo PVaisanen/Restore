@@ -1,4 +1,3 @@
-import { PaymentIntent } from "@stripe/stripe-js";
 import { PaymentSummary, ShippingAddress } from "../app/models/order";
 
 export function currencyFormat(amount: number) {
@@ -17,9 +16,7 @@ export function filterEmptyValues(values: object) {
 
  export const formatAddressString = (address: ShippingAddress ) => {
 
-
-
-     return `${address?.name}, ${address?.line1}, ${address?.line2}, ${address?.city}, ${address?.state},
+    return `${address?.name}, ${address?.line1}, ${address?.line2}, ${address?.city}, ${address?.state},
                 ${address?.postal_code}, ${address?.country} `
   }  
 
