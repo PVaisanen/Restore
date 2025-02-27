@@ -3,7 +3,7 @@ import ProductList from "./ProductList";
 import { useFetchFiltersQuery, useFetchProductsQuery } from "./catalogApi";
 import Filters from "./Filters";
 import { useAppDispatch, useAppSelector } from "../../app/store/store";
-import AddPagination from "../../app/shared/components/AddPagination";
+import AppPagination from "../../app/shared/components/AppPagination";
 import { setPageNumber } from "./CatalogSlice";
 
 export default function Catalog() {
@@ -23,7 +23,7 @@ export default function Catalog() {
           {data.items && data.items.length > 0 ? (
             <>
             <ProductList products={data.items}/>  
-            <AddPagination
+            <AppPagination
                 metadata={data.pagination}
                 onPageChange={(page: number) => {
                   dispatch(setPageNumber(page))

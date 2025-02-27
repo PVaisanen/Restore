@@ -11,6 +11,7 @@ public class Basket
     public string? ClientSecret {get; set; }
 
     public string? PaymentIntentId { get; set; }
+    
 
     public void AddItem(Product product, int quantity)
     {
