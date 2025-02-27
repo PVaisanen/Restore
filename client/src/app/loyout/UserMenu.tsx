@@ -1,4 +1,4 @@
-import { History, Logout, Person } from "@mui/icons-material";
+import { History, Inventory, Logout, Person } from "@mui/icons-material";
 import { Button, Menu, Fade, MenuItem, ListItemIcon, ListItemText, Divider } from "@mui/material";
 import { useState } from "react";
 import { User } from "../models/user";
@@ -52,6 +52,13 @@ export default function UserMenu({user}: Props) {
             </ListItemIcon>
             <ListItemText>My orders</ListItemText>
         </MenuItem>
+        {user.roles.includes('Admin') && 
+        <MenuItem  component={Link} to='/inventory'>
+            <ListItemIcon>
+                <Inventory />
+            </ListItemIcon>
+            <ListItemText>Inventory</ListItemText>
+        </MenuItem>}
         <Divider />
         <MenuItem onClick={logout}>
             <ListItemIcon>

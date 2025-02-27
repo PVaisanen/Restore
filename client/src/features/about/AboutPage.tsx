@@ -1,6 +1,7 @@
 import { Alert, AlertTitle, Button, ButtonGroup, Container, Divider, List, ListItem, Typography } from "@mui/material";
 import { useLazyGet400ErrorQuery, useLazyGet401ErrorQuery, useLazyGet404ErrorQuery, useLazyGet500ErrorQuery, useLazyGetValidationErrorQuery } from "./errorApi";
 import { useState } from "react";
+import MovingBox from "../../app/shared/components/MovingBox";
 
 export default function AboutPage() {
   const [validationErrors, setvalidationErrors] = useState<string[]>([]);
@@ -33,6 +34,12 @@ export default function AboutPage() {
       </Typography>
 
       <Divider />
+
+      <MovingBox></MovingBox>
+
+      <Divider />
+
+
 
 
       <Typography gutterBottom variant="h5" sx={{mt: 5}}>Error for testing</Typography>
